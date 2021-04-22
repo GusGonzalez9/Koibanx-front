@@ -84,7 +84,7 @@ export default function Table({
             <th>Balance actual</th>
           )}
           <th key="id">Activo</th>
-          <th key="id">Ultima venta</th>
+          <th>Ultima venta</th>
         </tr>
       </thead>
       <tbody>

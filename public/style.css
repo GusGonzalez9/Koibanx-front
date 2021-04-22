@@ -1,0 +1,73 @@
+html {
+  height: 100%;
+}
+#root {
+  height: 100%;
+  margin: auto;
+}
+body {
+  height: 100%;
+  margin: 5 auto;
+  background-color: rgb(255, 255, 255);
+}
+.App {
+  display: flex;
+  flex-direction: column;
+  width: 97%;
+  margin: auto;
+  height: 100%;
+}
+
+.NavbarCotainer {
+  width: 100%;
+  display: flex;
+  padding: 0 5px 0 5px;
+  background-color: #d62828;
+  border: none;
+  border-radius: 1px;
+  box-shadow: 0 2px 3px 0px black;
+  height: 8%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.styled-table {
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 0.9em;
+  font-family: sans-serif;
+  width: 100%;
+  background-color: gainsboro;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.styled-table thead tr {
+  background-color: #d62828;
+  color: #ffffff;
+  text-align: left;
+}
+.styled-table th,
+.styled-table td {
+  padding: 12px 15px;
+}
+
+option {
+  font-size: 15px;
+}
+input {
+  margin-right: 10px;
+  border-radius: 2px;
+  border: none;
+  background-color: gainsboro;
+  height: 20px;
+}
+
+
+.buttonSubmit{
+    border: none;
+    width: 35%;
+    border-radius: 2px;
+    height: 20px;
+ background-color: gainsboro;
+    font-size: 15px;
+}

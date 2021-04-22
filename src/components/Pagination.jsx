@@ -23,11 +23,11 @@ export default function Pagination({ rowsPerPage, totalRows, setCurrentPage }) {
                 fontSize: "20px",
                 borderRadius: "2px",
                 borderWidth: "2px",
-                margin:'3px'
+                margin: "3px",
               }}
               onClick={() => setCurrentPage(row)}
             >
-              <li style={{ listStyle: "none", marginLeft: "2px" }}  key={i}>
+              <li style={{ listStyle: "none", marginLeft: "2px" }} key={i}>
                 {row}
               </li>
             </button>

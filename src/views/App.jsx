@@ -1,6 +1,6 @@
 import React from "react";
-import Table from "../views/Table";
-import Pagination from "../views/Pagination";
+import Table from "../components/Table";
+import Pagination from "../components/Pagination";
 import Data from "../stores.json";
 import { queryGenerator } from "../querys/querys";
 
@@ -9,11 +9,29 @@ export default function App() {
   const [filterByStatus, setfilterByStatus] = React.useState("");
   const [filterValue, setFilterValue] = React.useState("");
   const [filtrados, setFiltrados] = React.useState(Data);
+  const [order, setOrder] = React.useState({ key: "", status: true });
 
-  let handleSubmitSearch = (e) => {
+  const setOrderAndOrder = (e, togleOrder, key) => {
+    e.preventDefault();
+
+    if (togleOrder) {
+      filtrados["data to show"] = filtrados["data to show"].sort(
+        (a, b) => Number(a[key]) - Number(b[key])
+      );
+    } else {
+      filtrados["data to show"] = filtrados["data to show"].sort(
+        (a, b) => Number(b[key]) - Number(a[key])
+      );
+    }
+
+    setFiltrados(filtrados);
+    setOrder({ ...order, status: !order.status, key: key });
+  };
+
+  let handleSubmitSearch = async (e) => {
     e.preventDefault();
     try {
-      queryGenerator(filterValue, filterByStatus).then((res) =>
+      await queryGenerator(filterValue, filterByStatus).then((res) =>
         setFiltrados(res)
       );
     } catch (err) {
@@ -41,16 +59,20 @@ export default function App() {
           <select
             id="status"
             onChange={(e) => setfilterByStatus(e.target.value)}
-            style={{width:'150px', height:'80%',backgroundColor:'gainsboro'}}
+            style={{
+              width: "150px",
+              height: "80%",
+              backgroundColor: "gainsboro",
+            }}
           >
-            <option value="" >--</option>
+            <option value="">--</option>
             <option value="1">Active</option>
             <option value="0">No Active</option>
           </select>
         </div>
 
-        <div style={{width:'30%'}}>
-          <form style={{width:'100%'}}>
+        <div style={{ width: "30%" }}>
+          <form style={{ width: "100%" }}>
             <input
               type="text"
               placeholder="Search ..."
@@ -70,7 +92,12 @@ export default function App() {
         </div>
       </div>
       <div>
-        <Table rowsToRender={rowsToRender} />
+        <Table
+          rowsToRender={rowsToRender}
+          filtrados={filtrados}
+          order={order}
+          setOrderAndOrder={setOrderAndOrder}
+        />
         <Pagination
           rowsPerPage={filtrados["rows per page"]}
           totalRows={filtrados["rows total"]}

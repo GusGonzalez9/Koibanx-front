@@ -1,7 +1,7 @@
 {
   "data to show": [
     {
-      "ID": "1",
+      "ID": "3",
       "Comercio": "Gonzalez SRC",
       "CUIT": "242123123",
       "Concepto 1": 1,
@@ -15,7 +15,7 @@
       "Ultima venta": "26/06/11"
     },
     {
-      "ID": "2",
+      "ID": "5",
       "Comercio": "Walmart",
       "CUIT": "2421212312",
       "Concepto 1": 10,
@@ -29,7 +29,7 @@
       "Ultima venta": "26/06/11"
     },
     {
-      "ID": "3",
+      "ID": "1",
       "Comercio": "Carrefour",
       "CUIT": "242123123",
       "Concepto 1": 1,
@@ -57,7 +57,7 @@
       "Ultima venta": "26/06/11"
     },
     {
-      "ID": "5",
+      "ID": "2",
       "Comercio": "Ramirez SRC",
       "CUIT": "242123123",
       "Concepto 1": 1,
@@ -87,7 +87,7 @@
     {
       "ID": "7",
       "Comercio": "Dia%",
-      "CUIT": "798959595-20",
+      "CUIT": "79895959520",
       "Concepto 1": 1,
       "Concepto 2": 1,
       "Concepto 3": 1,
@@ -144,7 +144,7 @@
 
   "rows total": 10,
 
-  "rows per page": 3,
+  "rows per page": 2,
 
-  "sort": []
+  "sort": ["ID","CUIT","Balance actual"]
 }

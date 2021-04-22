@@ -12,5 +12,7 @@ Simule un archivo llamado stores.json para poder corroborar el correcto funciona
 
 Para poder cambiar el stores.json dummy, solo es necesario cambiar la baseUrl, al apuntar a una API real, la solicitud que realiza el queryGenerator nos traera el objeto que esperamos recibir, luego este se setea al estado local de nuestro componente principal, y esta informacion es pasada a los hijos del mismo. 
 
+Para el sort pase 3 valores solamente, los cuales creo que son los campos por los cuales es mas logico ordenar la tabla. 
+
 Fue muy entretenido y constructivo para mi el poder realizar este ejercicio, gracias!
 
